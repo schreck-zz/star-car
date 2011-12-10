@@ -1,0 +1,18 @@
+var parent : Transform;
+var omega : float; // Argument of periapsis
+var Omega : float; // Longitude of ascending node
+var i : float; // Inclination
+var a : float = 60.0; // Semimajor Axis
+var e : float; // Eccentricity
+var M_0 : float; // Mean anomaly
+var marker : Transform;
+
+function Start() {
+    var ap = Instantiate(marker,Vector3((1+e)*a,0,0),Quaternion.identity);
+    ap.transform.parent = transform;
+    var per = Instantiate(marker,Vector3(-(1-e)*a,0,0),Quaternion.identity);
+    per.transform.parent = transform;
+}
+
+function Update () {
+}
